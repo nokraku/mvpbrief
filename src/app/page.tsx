@@ -888,6 +888,14 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<'scenario' | 'challenge' | 'task'>('scenario');
   const [showMission, setShowMission] = useState(false);
 
+  const resetFilters = () => {
+    setSelectedSkills([]);
+    setSelectedIndustry([]);
+    setSelectedExperience([]);
+    setCurrentChallenge(null);
+    setActiveTab('scenario');
+  };
+
   const filterChallenges = (): Challenge[] => {
     const filtered = challengeData.filter(challenge => {
       const skillMatch = selectedSkills.length === 0 || selectedSkills.includes(challenge.Skill);
@@ -1006,15 +1014,21 @@ if (showMission) {
           />
         </div>
 
-        {/* New Challenge Button */}
-        <div className="mb-8">
-          <button
-            onClick={generateNewChallenge}
-            className="bg-black text-white px-8 py-3 rounded-md font-medium text-sm tracking-wide hover:bg-gray-800 transition-all cursor-pointer transform hover:translate-x-1"
-          >
-            NEW CHALLENGE
-          </button>
-        </div>
+        {/* Action Buttons */}
+<div className="flex gap-4 mb-8">
+  <button
+    onClick={generateNewChallenge}
+    className="bg-black text-white px-8 py-3 rounded-md font-medium text-sm tracking-wide hover:bg-gray-800 transition-all cursor-pointer transform hover:translate-x-1"
+  >
+    NEW CHALLENGE
+  </button>
+  <button
+    onClick={resetFilters}
+    className="bg-gray-400 text-white px-6 py-3 rounded-md font-medium text-sm tracking-wide hover:bg-gray-500 transition-all cursor-pointer"
+  >
+    RESET
+  </button>
+</div>
 
         {/* Challenge Content */}
         {currentChallenge ? (
