@@ -18,13 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G_VJ3LKYEK8" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G_VJ3LKY7EK8" />
         <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G_VJ3LKYEK8');
+            gtag('config', 'G_VJ3LKY7EK8');
           `}
         </Script>
         {children}
