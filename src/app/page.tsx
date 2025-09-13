@@ -316,32 +316,33 @@ if (showMission) {
         ) : currentChallenge ? (
           <div className="bg-white rounded-lg shadow-sm">
             {/* Tab Navigation */}
-            <div className="border-b border-gray-200">
-              <div className="flex">
-                {[
-                  { id: 'scenario', label: 'Scenario', icon: '🔍' },
-                  { id: 'challenge', label: 'Challenge', icon: '🧠' },
-                  { id: 'task', label: 'Task', icon: '✏️' }
-                ].map((tab, index) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id as 'scenario' | 'challenge' | 'task')}
-                    className={`flex-1 px-6 py-4 text-center font-medium text-sm transition-all cursor-pointer ${
-                      index < 2 ? 'border-r border-gray-200' : ''
-                    } ${
-                      activeTab === tab.id 
-                        ? 'text-gray-900 bg-gray-50 border-b-2 border-teal-400' 
-                        : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-                    }`}
-                  >
-                    <div className="flex items-center justify-center gap-2">
-                      <span className="text-base">{tab.icon}</span>
-                      <span>{tab.label}</span>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
+<div className="border-b border-gray-200">
+  <div className="flex overflow-x-auto">
+    {[
+      { id: 'scenario', label: 'Scenario', icon: '🔍' },
+      { id: 'challenge', label: 'Challenge', icon: '🧠' },
+      { id: 'task', label: 'Task', icon: '✏️' }
+    ].map((tab, index) => (
+      <button
+        key={tab.id}
+        onClick={() => setActiveTab(tab.id as 'scenario' | 'challenge' | 'task')}
+        className={`flex-shrink-0 min-w-0 px-4 sm:px-6 py-4 text-center font-medium text-sm transition-all cursor-pointer ${
+          index < 2 ? 'border-r border-gray-200' : ''
+        } ${
+          activeTab === tab.id 
+            ? 'text-gray-900 bg-gray-50 border-b-2 border-teal-400' 
+            : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+        }`}
+        style={{ flex: '1 1 33.333%' }}
+      >
+        <div className="flex items-center justify-center gap-1 sm:gap-2">
+          <span className="text-sm sm:text-base">{tab.icon}</span>
+          <span className="text-xs sm:text-sm truncate">{tab.label}</span>
+        </div>
+      </button>
+    ))}
+  </div>
+</div>
 
             {/* Tab Content */}
             <div className="p-8">
