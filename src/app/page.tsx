@@ -16,7 +16,7 @@ interface Challenge {
 
 // Google Sheets configuration
 const SHEET_ID = '1STA109HST7I-uvol9uqruCbq9KduRJJunDHj4mHIW2Y';
-const API_KEY = 'YOUR_API_KEY_HERE'; // Replace with your actual API key
+const API_KEY = 'AIzaSyDGfxAJHC-7-R12aScBUSo1zwwEAH9exTE'; // your actual API key
 const RANGE = 'Sheet1!A2:G'; // Assuming your data starts in row 2
 
 const skillOptions = ["Strategy", "Prioritisation", "Discovery", "Launch Planning", "Metrics"];
@@ -138,7 +138,7 @@ export default function Home() {
       const data = await response.json();
       
       if (data.values) {
-        const formattedChallenges = data.values.map((row: any[]) => ({
+        const formattedChallenges = data.values.map((row: string[]) => ({
           Ref: parseInt(row[0]),
           Skill: row[1],
           Specialism: row[2],
