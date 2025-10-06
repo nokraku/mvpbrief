@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'MVPbrief - Real-world Product Challenges',
   description: 'Generate product management challenges based on your experience and area of interest',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
