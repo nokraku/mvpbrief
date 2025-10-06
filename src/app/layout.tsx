@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'MVPbrief - Real-world Product Challenges',
   description: 'Generate product management challenges based on your experience and area of interest',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/icon.png',
   },
 };
 
